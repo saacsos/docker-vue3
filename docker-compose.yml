@@ -1,0 +1,13 @@
+services:
+  my_frontend:
+    container_name: my_frontend
+    image: node:lts
+    working_dir: /var/www/html/app/
+    entrypoint: /bin/bash
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend/:/var/www/html/app
+    tty: true
